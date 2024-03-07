@@ -4,11 +4,14 @@ import tsconfigPaths from "vite-tsconfig-paths";
 import AutoImport from "unplugin-auto-import/vite";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 import { resolve } from "path";
+import { quasar, transformAssetUrls } from "@quasar/vite-plugin";
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    vue(),
+    vue({
+      template: { transformAssetUrls },
+    }),
     tsconfigPaths(),
     AutoImport({
       imports: ["vue", "vue-router", "pinia"],
@@ -20,6 +23,7 @@ export default defineConfig({
       },
       vueTemplate: true,
     }),
+    quasar({}),
   ],
   resolve: {
     alias: {

@@ -11,7 +11,8 @@ const { increment } = store;
 
 <template>
   <div>
-    <h1>Home</h1>
+    <p class="text-indigo text-h1">Welcome to Vite Quasar</p>
+    <h1 class="text-bold">Home</h1>
     <p>This is the home page</p>
     <router-link to="/about">Go to About</router-link>
     <p>Count: {{ count }}</p>
