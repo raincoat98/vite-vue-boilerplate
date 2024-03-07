@@ -1,10 +1,10 @@
 <script lang="ts" setup>
 import { useCounterStore } from "@/store/counter";
-import { storeToRefs } from "pinia";
 
 const store = useCounterStore();
 
 const { count, name, doubleCount } = storeToRefs(store);
+
 // increment 액션은 그냥 구조화 가능.
 const { increment } = store;
 </script>
