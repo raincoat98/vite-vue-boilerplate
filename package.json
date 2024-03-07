@@ -11,6 +11,7 @@
   "dependencies": {
     "@types/node": "^20.11.24",
     "pinia": "^2.1.7",
+    "vite-plugin-php": "^1.0.9",
     "vue": "^3.4.19",
     "vue-router": "^4.3.0"
   },

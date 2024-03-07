@@ -22,4 +22,3 @@ const { increment } = store;
 </template>
 
 <style lang="scss" scoped></style>
-@/store/counter-store@/store/counter
