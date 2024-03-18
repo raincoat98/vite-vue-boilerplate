@@ -12,9 +12,7 @@ export default defineConfig({
   plugins: [
     vue(),
     tsconfigPaths(),
-    Components({
-      resolvers: [PrimeVueResolver()],
-    }),
+
     AutoImport({
       imports: ["vue", "vue-router", "pinia"],
       resolvers: [ElementPlusResolver()],

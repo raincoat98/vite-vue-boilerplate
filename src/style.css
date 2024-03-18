@@ -2,50 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --color-primary: 255 115 179;
+
+    --color-primary-50: 243 242 250 100;
+    --color-primary-100: 225 220 246;
+    --color-primary-200: 196 186 237;
+    --color-primary-300: 167 151 228;
+    --color-primary-400: 138 116 219;
+    --color-primary-500: 77 68 181; /* 기본 primary 색상 */
+    --color-primary-600: 86 77 169;
+    --color-primary-700: 61 57 129;
+    --color-primary-800: 39 37 89;
+    --color-primary-900: 15 17 49;
+
+    --color-surface-0: 255 255 255; /* 가장 밝은 톤 */
+    --color-surface-50: 248 250 252;
+    --color-surface-100: 241 245 249;
+    --color-surface-200: 226 232 240;
+    --color-surface-300: 203 213 224;
+    --color-surface-400: 148 163 184;
+    --color-surface-500: 100 116 139; /* 중간 톤 */
+    --color-surface-600: 71 85 105;
+    --color-surface-700: 45 55 72;
+    --color-surface-800: 30 41 59;
+    --color-surface-900: 15 23 42; /* 가장 어두운 톤 */
+    --color-surface-950: 3 6 23; /* 더욱 어둡게 조정된 톤 */
+  }
+}
+
 :root {
   font-family: "Inter var", sans-serif;
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   font-variation-settings: normal;
   --font-family: "Inter var", sans-serif;
   --font-feature-settings: "cv02", "cv03", "cv04", "cv11";
-  /* --primary-50: 236 253 245;
-  --primary-100: 209 250 229;
-  --primary-200: 167 243 208;
-  --primary-300: 110 231 183;
-  --primary-400: 52 211 153;
-  --primary-500: 16 185 129;
-  --primary-600: 5 150 105;
-  --primary-700: 4 120 87;
-  --primary-800: 6 95 70;
-  --primary-900: 4 78 56;
-  --primary-950: 2 44 34;
-  --surface-0: 255 255 255;
-  --surface-50: 248 250 252;
-  --surface-100: 241 245 249;
-  --surface-200: 226 232 240;
-  --surface-300: 203 213 225;
-  --surface-400: 148 163 184;
-  --surface-500: 100 116 139;
-  --surface-600: 71 85 105;
-  --surface-700: 45 55 72;
-  --surface-800: 30 41 59;
-  --surface-900: 15 23 42;
-  --surface-950: 3 6 23; */
 }
 
 :root {
-  --body-bg: rgb(var(--surface-50));
-  --body-text-color: rgb(var(--surface-900));
+  --body-bg: rgb(var(--color-surface-50));
+  --body-text-color: rgb(var(--color-surface-500));
   --card-border: 1px solid var(--border-color);
-  --card-bg: rgb(var(--surface-0));
-  --border-color: rgb(var(--surface-200));
+  --card-bg: rgb(var(--color-surface-0));
+  --border-color: rgb(var(--color-surface-200));
 }
 
 :root[class="dark"] {
-  --body-bg: rgb(var(--surface-900));
-  --body-text-color: rgb(var(--surface-50));
+  --body-bg: rgb(var(--color-surface-900));
+  --body-text-color: rgb(var(--color-surface-50));
   --card-border: 1px solid transparent;
-  --card-bg: rgb(var(--surface-800));
+  --card-bg: rgb(var(--color-surface-800));
   --border-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -63,7 +70,6 @@ body {
   color: var(--body-text-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding: 1rem;
 }
 
 .card {
@@ -96,7 +102,8 @@ body {
   0% {
     opacity: 0;
     transform: scaleY(0.8);
-    transition: transform 0.12s cubic-bezier(0, 0, 0.2, 1),
+    transition:
+      transform 0.12s cubic-bezier(0, 0, 0.2, 1),
       opacity 0.12s cubic-bezier(0, 0, 0.2, 1);
   }
   100% {
